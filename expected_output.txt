@@ -1,0 +1,646 @@
+===========Test Unbalanced Binary Tree Insertion============
+
+UnbalancedTree::NodeType * Node = myTree.AddNode(36, Foo())
+Create Foo_0
+*** Allocate block 0 : 1 elem of 48 bytes
+Create Foo_1 copy of Foo_0
+Destroy Foo_0
+
+Create Foo_55
+
+Node = myTree.AddNode(55, johnCarmaFoo)
+*** Allocate block 1 : 1 elem of 48 bytes
+Create Foo_56 copy of Foo_55
+Create Foo_28
+
+Node = myTree.AddNode(28, adaLovelaFoo)
+*** Allocate block 2 : 1 elem of 48 bytes
+Create Foo_29 copy of Foo_28
+Create Foo_32
+
+myTree.AddNode(32, std::move(margaretHamilFoo))
+*** Allocate block 3 : 1 elem of 48 bytes
+Create Foo_33 copy of Foo_32
+Create Foo_66
+
+Node = myTree.AddNode(66, movedBjarne)
+*** Allocate block 4 : 1 elem of 48 bytes
+Create Foo_67 copy of Foo_66
+
+Node = myTree.Add(66, bjarneStrousFoo))
+Create Foo_1
+Create Foo_2
+*** Allocate block 5 : 1 elem of 48 bytes
+Create Foo_3 copy of Foo_2
+Destroy Foo_2
+
+Moving Foo_1 (now set to -1) into Foo_3 (now set to 1)
+Destroy Foo_-1
+
+Create Foo_700
+Moving Foo_700 (now set to -1) into Foo_1 (now set to 700)
+Destroy Foo_-1
+
+Create Foo_1337
+Copying Foo_1337 into Foo_700
+
+Node = myTree.Search(0xBAADF00D)
+Create Foo_42
+Copying Foo_42 into Foo_1337
+Create Foo_64
+Moving Foo_64 (now set to -1) into Foo_42 (now set to 64)
+Destroy Foo_-1
+
+Create Foo_64
+Destroy Foo_64
+
+Create Foo_64
+Destroy Foo_64
+
+
+Node = myTree.AddNode(71, Foo())
+Create Foo_3
+*** Allocate block 6 : 1 elem of 48 bytes
+Create Foo_4 copy of Foo_3
+Destroy Foo_3
+
+
+Node = myTree.Search(36)
+Destroy Foo_42
+
+Destroy Foo_1337
+
+Destroy Foo_66
+
+Destroy Foo_32
+
+Destroy Foo_28
+
+Destroy Foo_55
+
+Destroy Foo_33
+
+*** Deallocate block 3 : 1 elem of 48 bytes
+Destroy Foo_29
+
+*** Deallocate block 2 : 1 elem of 48 bytes
+Destroy Foo_4
+
+*** Deallocate block 6 : 1 elem of 48 bytes
+Destroy Foo_64
+
+*** Deallocate block 5 : 1 elem of 48 bytes
+Destroy Foo_67
+
+*** Deallocate block 4 : 1 elem of 48 bytes
+Destroy Foo_56
+
+*** Deallocate block 1 : 1 elem of 48 bytes
+Destroy Foo_1
+
+*** Deallocate block 0 : 1 elem of 48 bytes
+*** No memory leak
+===========Test Unbalanced Binary Tree Remove============
+*** Allocate block 7 : 1 elem of 32 bytes
+*** Allocate block 8 : 1 elem of 32 bytes
+*** Allocate block 9 : 1 elem of 32 bytes
+*** Allocate block 10 : 1 elem of 32 bytes
+*** Allocate block 11 : 1 elem of 32 bytes
+*** Allocate block 12 : 1 elem of 32 bytes
+
+removed = tree.RemoveNode(2)
+*** Deallocate block 10 : 1 elem of 32 bytes
+
+removed = tree.RemoveNode(16)
+*** Deallocate block 12 : 1 elem of 32 bytes
+*** Allocate block 13 : 1 elem of 32 bytes
+*** Allocate block 14 : 1 elem of 32 bytes
+*** Allocate block 15 : 1 elem of 32 bytes
+*** Allocate block 16 : 1 elem of 32 bytes
+*** Allocate block 17 : 1 elem of 32 bytes
+*** Allocate block 18 : 1 elem of 32 bytes
+*** Allocate block 19 : 1 elem of 32 bytes
+*** Allocate block 20 : 1 elem of 32 bytes
+*** Allocate block 21 : 1 elem of 32 bytes
+*** Allocate block 22 : 1 elem of 32 bytes
+*** Allocate block 23 : 1 elem of 32 bytes
+
+removed = tree.RemoveNode(nodeToRemove->Key)
+*** Deallocate block 16 : 1 elem of 32 bytes
+
+removed = tree.RemoveNode(nodeToRemove->Key)
+*** Deallocate block 15 : 1 elem of 32 bytes
+*** Allocate block 24 : 1 elem of 32 bytes
+
+removed = tree.RemoveNode(nodeToRemove->Key)
+*** Deallocate block 23 : 1 elem of 32 bytes
+
+removed = tree.RemoveNode(10)
+*** Deallocate block 9 : 1 elem of 32 bytes
+*** Allocate block 25 : 1 elem of 32 bytes
+
+treeSingleNode.RemoveNode(42)
+*** Deallocate block 25 : 1 elem of 32 bytes
+*** Deallocate block 13 : 1 elem of 32 bytes
+*** Deallocate block 14 : 1 elem of 32 bytes
+*** Deallocate block 8 : 1 elem of 32 bytes
+*** Deallocate block 22 : 1 elem of 32 bytes
+*** Deallocate block 21 : 1 elem of 32 bytes
+*** Deallocate block 24 : 1 elem of 32 bytes
+*** Deallocate block 20 : 1 elem of 32 bytes
+*** Deallocate block 19 : 1 elem of 32 bytes
+*** Deallocate block 18 : 1 elem of 32 bytes
+*** Deallocate block 17 : 1 elem of 32 bytes
+*** Deallocate block 11 : 1 elem of 32 bytes
+*** Deallocate block 7 : 1 elem of 32 bytes
+*** No memory leak
+===========Test AVL Tree============
+Create Foo_0
+
+Node = myTree.AddNode(9, kenThompFoo)
+*** Allocate block 26 : 1 elem of 48 bytes
+Create Foo_1 copy of Foo_0
+Create Foo_1
+
+Node = myTree.AddNode(6, dennisRitchFoo)
+*** Allocate block 27 : 1 elem of 48 bytes
+Create Foo_2 copy of Foo_1
+Create Foo_2
+
+Node = myTree.AddNode(4, barbaraLiskFoo)
+*** Allocate block 28 : 1 elem of 48 bytes
+Create Foo_3 copy of Foo_2
+Create Foo_3
+*** Allocate block 29 : 1 elem of 48 bytes
+Create Foo_4 copy of Foo_3
+Destroy Foo_3
+
+Create Foo_4
+
+Node = myTree.AddNode(12, alanKayFoo)
+*** Allocate block 30 : 1 elem of 48 bytes
+Create Foo_5 copy of Foo_4
+Create Foo_5
+
+Node = myTree.AddNode(30, graceHopFoo)
+*** Allocate block 31 : 1 elem of 48 bytes
+Create Foo_6 copy of Foo_5
+Create Foo_6
+
+Node = myTree.AddNode(22, edsgerDijkstrFoo)
+*** Allocate block 32 : 1 elem of 48 bytes
+Create Foo_7 copy of Foo_6
+
+Node = myTree.AddNode(28, Foo())
+Create Foo_7
+*** Allocate block 33 : 1 elem of 48 bytes
+Create Foo_8 copy of Foo_7
+Destroy Foo_7
+
+Create Foo_8
+
+Node = myTree.AddNode(29, alanTurFoo)
+*** Allocate block 34 : 1 elem of 48 bytes
+Create Foo_9 copy of Foo_8
+
+removed = myTree.RemoveNode(29)
+Moving Foo_8 (now set to -1) into Foo_9 (now set to 8)
+Destroy Foo_-1
+
+*** Deallocate block 33 : 1 elem of 48 bytes
+
+removed = myTree.RemoveNode(22)
+Moving Foo_5 (now set to -1) into Foo_7 (now set to 5)
+Destroy Foo_-1
+
+*** Deallocate block 30 : 1 elem of 48 bytes
+
+removed = myTree.RemoveNode(9)
+Destroy Foo_1
+
+*** Deallocate block 26 : 1 elem of 48 bytes
+
+Node = myTree.AddNode(1, Foo())
+Create Foo_9
+*** Allocate block 35 : 1 elem of 48 bytes
+Create Foo_10 copy of Foo_9
+Destroy Foo_9
+
+
+Node = myTree.AddNode(2, Foo())
+Create Foo_10
+*** Allocate block 36 : 1 elem of 48 bytes
+Create Foo_11 copy of Foo_10
+Destroy Foo_10
+
+
+Node = myTree.AddNode(3, Foo())
+Create Foo_11
+*** Allocate block 37 : 1 elem of 48 bytes
+Create Foo_12 copy of Foo_11
+Destroy Foo_11
+
+
+Node = myTree.AddNode(5, Foo())
+Create Foo_12
+*** Allocate block 38 : 1 elem of 48 bytes
+Create Foo_13 copy of Foo_12
+Destroy Foo_12
+
+
+Node = myTree.AddNode(7, Foo())
+Create Foo_13
+*** Allocate block 39 : 1 elem of 48 bytes
+Create Foo_14 copy of Foo_13
+Destroy Foo_13
+
+
+Node = myTree.AddNode(8, Foo())
+Create Foo_14
+*** Allocate block 40 : 1 elem of 48 bytes
+Create Foo_15 copy of Foo_14
+Destroy Foo_14
+
+
+removed = myTree.RemoveNode(4)
+Moving Foo_12 (now set to -1) into Foo_3 (now set to 12)
+Destroy Foo_-1
+
+*** Deallocate block 37 : 1 elem of 48 bytes
+
+removed = myTree.RemoveNode(3)
+Moving Foo_11 (now set to -1) into Foo_12 (now set to 11)
+Copying Foo_10 into Foo_-1
+Destroy Foo_10
+
+*** Deallocate block 35 : 1 elem of 48 bytes
+
+Node = myTree.AddNode(3, Foo())
+Create Foo_15
+*** Allocate block 41 : 1 elem of 48 bytes
+Create Foo_16 copy of Foo_15
+Destroy Foo_15
+
+
+removed = myTree.RemoveNode(2)
+Moving Foo_10 (now set to -1) into Foo_11 (now set to 10)
+Destroy Foo_-1
+
+*** Deallocate block 36 : 1 elem of 48 bytes
+Destroy Foo_8
+
+Destroy Foo_6
+
+Destroy Foo_5
+
+Destroy Foo_4
+
+Destroy Foo_2
+
+Destroy Foo_1
+
+Destroy Foo_0
+
+Destroy Foo_10
+
+*** Deallocate block 28 : 1 elem of 48 bytes
+Destroy Foo_13
+
+*** Deallocate block 38 : 1 elem of 48 bytes
+Destroy Foo_16
+
+*** Deallocate block 41 : 1 elem of 48 bytes
+Destroy Foo_15
+
+*** Deallocate block 40 : 1 elem of 48 bytes
+Destroy Foo_14
+
+*** Deallocate block 39 : 1 elem of 48 bytes
+Destroy Foo_5
+
+*** Deallocate block 32 : 1 elem of 48 bytes
+Destroy Foo_6
+
+*** Deallocate block 31 : 1 elem of 48 bytes
+Destroy Foo_8
+
+*** Deallocate block 34 : 1 elem of 48 bytes
+Destroy Foo_4
+
+*** Deallocate block 29 : 1 elem of 48 bytes
+Destroy Foo_2
+
+*** Deallocate block 27 : 1 elem of 48 bytes
+*** No memory leak
+===========Test Red/Black Tree============
+Create Foo_0
+*** Allocate block 42 : 1 elem of 48 bytes
+Create Foo_1 copy of Foo_0
+Destroy Foo_0
+
+Create Foo_1
+*** Allocate block 43 : 1 elem of 48 bytes
+Create Foo_2 copy of Foo_1
+Destroy Foo_1
+
+Create Foo_2
+*** Allocate block 44 : 1 elem of 48 bytes
+Create Foo_3 copy of Foo_2
+Destroy Foo_2
+
+Create Foo_3
+*** Allocate block 45 : 1 elem of 48 bytes
+Create Foo_4 copy of Foo_3
+Destroy Foo_3
+
+Create Foo_4
+*** Allocate block 46 : 1 elem of 48 bytes
+Create Foo_5 copy of Foo_4
+Destroy Foo_4
+
+Create Foo_5
+*** Allocate block 47 : 1 elem of 48 bytes
+Create Foo_6 copy of Foo_5
+Destroy Foo_5
+
+Create Foo_6
+*** Allocate block 48 : 1 elem of 48 bytes
+Create Foo_7 copy of Foo_6
+Destroy Foo_6
+
+Create Foo_7
+*** Allocate block 49 : 1 elem of 48 bytes
+Create Foo_8 copy of Foo_7
+Destroy Foo_7
+
+Create Foo_8
+*** Allocate block 50 : 1 elem of 48 bytes
+Create Foo_9 copy of Foo_8
+Destroy Foo_8
+
+Create Foo_9
+*** Allocate block 51 : 1 elem of 48 bytes
+Create Foo_10 copy of Foo_9
+Destroy Foo_9
+
+Create Foo_10
+*** Allocate block 52 : 1 elem of 48 bytes
+Create Foo_11 copy of Foo_10
+Destroy Foo_10
+
+Create Foo_11
+*** Allocate block 53 : 1 elem of 48 bytes
+Create Foo_12 copy of Foo_11
+Destroy Foo_11
+
+Destroy Foo_1
+
+*** Deallocate block 42 : 1 elem of 48 bytes
+Destroy Foo_3
+
+*** Deallocate block 44 : 1 elem of 48 bytes
+Destroy Foo_2
+
+*** Deallocate block 43 : 1 elem of 48 bytes
+Destroy Foo_5
+
+*** Deallocate block 46 : 1 elem of 48 bytes
+Destroy Foo_7
+
+*** Deallocate block 48 : 1 elem of 48 bytes
+Destroy Foo_6
+
+*** Deallocate block 47 : 1 elem of 48 bytes
+Destroy Foo_4
+
+*** Deallocate block 45 : 1 elem of 48 bytes
+Destroy Foo_9
+
+*** Deallocate block 50 : 1 elem of 48 bytes
+Destroy Foo_11
+
+*** Deallocate block 52 : 1 elem of 48 bytes
+Destroy Foo_12
+
+*** Deallocate block 53 : 1 elem of 48 bytes
+Destroy Foo_10
+
+*** Deallocate block 51 : 1 elem of 48 bytes
+Destroy Foo_8
+
+*** Deallocate block 49 : 1 elem of 48 bytes
+Create Foo_12
+*** Allocate block 54 : 1 elem of 48 bytes
+Create Foo_13 copy of Foo_12
+Destroy Foo_12
+
+Create Foo_13
+*** Allocate block 55 : 1 elem of 48 bytes
+Create Foo_14 copy of Foo_13
+Destroy Foo_13
+
+Create Foo_14
+*** Allocate block 56 : 1 elem of 48 bytes
+Create Foo_15 copy of Foo_14
+Destroy Foo_14
+
+Create Foo_15
+*** Allocate block 57 : 1 elem of 48 bytes
+Create Foo_16 copy of Foo_15
+Destroy Foo_15
+
+Create Foo_16
+*** Allocate block 58 : 1 elem of 48 bytes
+Create Foo_17 copy of Foo_16
+Destroy Foo_16
+
+Create Foo_17
+*** Allocate block 59 : 1 elem of 48 bytes
+Create Foo_18 copy of Foo_17
+Destroy Foo_17
+
+Create Foo_18
+*** Allocate block 60 : 1 elem of 48 bytes
+Create Foo_19 copy of Foo_18
+Destroy Foo_18
+
+Create Foo_19
+*** Allocate block 61 : 1 elem of 48 bytes
+Create Foo_20 copy of Foo_19
+Destroy Foo_19
+
+Create Foo_20
+*** Allocate block 62 : 1 elem of 48 bytes
+Create Foo_21 copy of Foo_20
+Destroy Foo_20
+
+Create Foo_21
+*** Allocate block 63 : 1 elem of 48 bytes
+Create Foo_22 copy of Foo_21
+Destroy Foo_21
+
+Destroy Foo_22
+
+*** Deallocate block 63 : 1 elem of 48 bytes
+Destroy Foo_21
+
+*** Deallocate block 62 : 1 elem of 48 bytes
+Destroy Foo_19
+
+*** Deallocate block 60 : 1 elem of 48 bytes
+Destroy Foo_20
+
+*** Deallocate block 61 : 1 elem of 48 bytes
+Destroy Foo_17
+
+*** Deallocate block 58 : 1 elem of 48 bytes
+Destroy Foo_18
+
+*** Deallocate block 59 : 1 elem of 48 bytes
+Destroy Foo_15
+
+*** Deallocate block 56 : 1 elem of 48 bytes
+Destroy Foo_13
+
+*** Deallocate block 54 : 1 elem of 48 bytes
+Destroy Foo_14
+
+*** Deallocate block 55 : 1 elem of 48 bytes
+Destroy Foo_16
+
+*** Deallocate block 57 : 1 elem of 48 bytes
+Create Foo_22
+*** Allocate block 64 : 1 elem of 48 bytes
+Create Foo_23 copy of Foo_22
+Destroy Foo_22
+
+Create Foo_23
+*** Allocate block 65 : 1 elem of 48 bytes
+Create Foo_24 copy of Foo_23
+Destroy Foo_23
+
+Create Foo_24
+*** Allocate block 66 : 1 elem of 48 bytes
+Create Foo_25 copy of Foo_24
+Destroy Foo_24
+
+Create Foo_25
+*** Allocate block 67 : 1 elem of 48 bytes
+Create Foo_26 copy of Foo_25
+Destroy Foo_25
+
+Create Foo_26
+*** Allocate block 68 : 1 elem of 48 bytes
+Create Foo_27 copy of Foo_26
+Destroy Foo_26
+
+Create Foo_27
+*** Allocate block 69 : 1 elem of 48 bytes
+Create Foo_28 copy of Foo_27
+Destroy Foo_27
+
+Create Foo_28
+*** Allocate block 70 : 1 elem of 48 bytes
+Create Foo_29 copy of Foo_28
+Destroy Foo_28
+
+Create Foo_29
+*** Allocate block 71 : 1 elem of 48 bytes
+Create Foo_30 copy of Foo_29
+Destroy Foo_29
+
+Create Foo_30
+*** Allocate block 72 : 1 elem of 48 bytes
+Create Foo_31 copy of Foo_30
+Destroy Foo_30
+
+Create Foo_31
+*** Allocate block 73 : 1 elem of 48 bytes
+Create Foo_32 copy of Foo_31
+Destroy Foo_31
+
+Create Foo_32
+*** Allocate block 74 : 1 elem of 48 bytes
+Create Foo_33 copy of Foo_32
+Destroy Foo_32
+
+Create Foo_33
+*** Allocate block 75 : 1 elem of 48 bytes
+Create Foo_34 copy of Foo_33
+Destroy Foo_33
+
+Create Foo_34
+*** Allocate block 76 : 1 elem of 48 bytes
+Create Foo_35 copy of Foo_34
+Destroy Foo_34
+
+Create Foo_35
+*** Allocate block 77 : 1 elem of 48 bytes
+Create Foo_36 copy of Foo_35
+Destroy Foo_35
+
+Copying Foo_33 into Foo_31
+Destroy Foo_33
+
+*** Deallocate block 74 : 1 elem of 48 bytes
+Destroy Foo_27
+
+*** Deallocate block 68 : 1 elem of 48 bytes
+Destroy Foo_25
+
+*** Deallocate block 66 : 1 elem of 48 bytes
+Copying Foo_32 into Foo_33
+Destroy Foo_32
+
+*** Deallocate block 73 : 1 elem of 48 bytes
+Destroy Foo_32
+
+*** Deallocate block 72 : 1 elem of 48 bytes
+Copying Foo_24 into Foo_23
+Destroy Foo_24
+
+*** Deallocate block 65 : 1 elem of 48 bytes
+Destroy Foo_36
+
+*** Deallocate block 77 : 1 elem of 48 bytes
+Destroy Foo_28
+
+*** Deallocate block 69 : 1 elem of 48 bytes
+Destroy Foo_35
+
+*** Deallocate block 76 : 1 elem of 48 bytes
+Destroy Foo_30
+
+*** Deallocate block 71 : 1 elem of 48 bytes
+Destroy Foo_34
+
+*** Deallocate block 75 : 1 elem of 48 bytes
+Destroy Foo_26
+
+*** Deallocate block 67 : 1 elem of 48 bytes
+Destroy Foo_24
+
+*** Deallocate block 64 : 1 elem of 48 bytes
+Destroy Foo_29
+
+*** Deallocate block 70 : 1 elem of 48 bytes
+*** No memory leak
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Algorithmics.exe is a Catch v2.10.2 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+Test Huffman encoding
+-------------------------------------------------------------------------------
+C:\Users\a.baron\Documents\GP1\tests\MyAlgorithmics\Algorithmics\Algorithmics.cpp(659)
+...............................................................................
+
+C:\Users\a.baron\Documents\GP1\tests\MyAlgorithmics\Algorithmics\Algorithmics.cpp(671): FAILED:
+explicitly with message:
+  Test Huffman encoding Unimplemented !
+
+===============================================================================
+test cases:   5 |   4 passed | 1 failed
+assertions: 221 | 220 passed | 1 failed
+
